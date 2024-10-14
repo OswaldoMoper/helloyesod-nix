@@ -9,7 +9,7 @@
 # to be used for project dependencies. For example:
 #
 # snapshot: lts-20.26
-# snapshot: nightly-2024-07-05
+snapshot: nightly-2021-06-19
 # snapshot: ghc-9.6.6
 #
 # The location of a snapshot can be provided as a file or url. Stack assumes
@@ -65,6 +65,7 @@ packages:
 #
 # Allow a newer minor version of GHC than the snapshot specifies
 # compiler-check: newer-minor
+# extra-deps:
 
 nix:
   enable: false
