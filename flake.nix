@@ -31,9 +31,9 @@
 
               shell.buildInputs = with pkgs; [
                 stack
-                haskell.compiler.ghc98
-                haskellPackages.zlib_0_7_1_0
-                nixUnstable
+                # haskell.compiler.ghc
+                # haskellPackages.zlib_0_7_1_0
+                # nixUnstable
                 # stylish-haskell
                 # haskell-language-server
               ];
