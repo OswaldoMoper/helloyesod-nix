@@ -31,23 +31,19 @@
 
               shell.buildInputs = with pkgs; [
                 stack
-                # haskell.compiler.ghc
-                # haskellPackages.zlib_0_7_1_0
-                # nixUnstable
-                # stylish-haskell
-                # haskell-language-server
+                stylish-haskell
+                haskell-language-server
               ];
               shell.additional = hsPkgs: with hsPkgs; [ Cabal ];
             };
-            # helloyesod-wrapper = pkgs.writeShellApplication {
-            #   name = "helloyesod-wrapped";
-            #   runtimeInputs = [ self.packages.x86_64-linux.default ];
-            #   text = ''
-            #    cd /home/omoper/helloyesod
-            #    ${self.packages.x86_64-linux.default}/bin/helloyesod
-            #   '';
-            # };
-
+            helloyesod-wrapper = pkgs.writeShellApplication {
+              name = "helloyesod-wrapped";
+              runtimeInputs = [ self.packages.x86_64-linux.default ];
+              text = ''
+               cd /home/omoper/helloyesod
+               ${self.packages.x86_64-linux.default}/bin/helloyesod
+              '';
+            };
           })
         ];
       pkgs = import nixpkgs { system = "x86_64-linux";
