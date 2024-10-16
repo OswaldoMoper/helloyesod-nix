@@ -1,7 +1,7 @@
 ## Nix Setup
 
 1. If you haven't already, [install Nix](https://nixos.org/download/)
-	* On POSIX systems, this is usually `$ curl -L https://nixos.org/nix/install | sh`
+	* On POSIX systems, this is usually `curl -L https://nixos.org/nix/install | sh`
 2. Run ``nix flake show --allow-import-from-derivation` to verify that the flake can be read correctly by nix.
 3. Build libraries: `nix build`
 
