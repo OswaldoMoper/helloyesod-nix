@@ -1,8 +1,31 @@
+## Nix Setup
+
+1. If you haven't already, [install Nix](https://nixos.org/download/)
+	* On POSIX systems, this is usually `$ curl -L https://nixos.org/nix/install | sh`
+2. Run ``nix flake show --allow-import-from-derivation` to verify that the flake can be read correctly by nix.
+3. Build libraries: `nix build`
+
+If you have trouble, refer to the [Nix Reference Manual](https://hydra.nixos.org/build/275163694/download/1/manual/introduction.html) for additional detail.
+
 ## Haskell Setup
 
-1. If you haven't already, [install Stack](https://haskell-lang.org/get-started)
-	* On POSIX systems, this is usually `curl -sSL https://get.haskellstack.org/ | sh`
-2. Install the `yesod` command line tool: `stack install yesod-bin --install-ghc`
+Because this project uses nix, there's no need to install Stack on your system, you can run it in a shell.
+1. Make sure you have the yesod command line tool declared
+	* V nix-shell:
+
+	```
+	nix-shell -p haskellPackages.yesod-bin
+	```
+
+	* Via NixOS Configuration:
+
+	```
+	environment.systemPackages = [
+      pkgs.haskellPackages.yesod-bin
+    ];
+	```
+
+2. Init a shell: `nix develop -c {your shell interpreter}`
 3. Build libraries: `stack build`
 
 If you have trouble, refer to the [Yesod Quickstart guide](https://www.yesodweb.com/page/quickstart) for additional detail.
@@ -27,6 +50,7 @@ stack test --flag helloyesod:library-only --flag helloyesod:dev
 
 ## Documentation
 
+* Check [nix.dev](https://nix.dev/) for the official documentation for the Nix ecosystem.
 * Read the [Yesod Book](https://www.yesodweb.com/book) online for free
 * Check [Stackage](http://stackage.org/) for documentation on the packages in your LTS Haskell version, or [search it using Hoogle](https://www.stackage.org/lts/hoogle?q=). Tip: Your LTS version is in your `stack.yaml` file.
 * For local documentation, use:
@@ -36,6 +60,8 @@ stack test --flag helloyesod:library-only --flag helloyesod:dev
 
 ## Getting Help
 
+* Ask questions and check other forums on [NixOS Discourse](https://discourse.nixos.org/)
+* Ask and contribute to the nix ecosystem on [Nix/Nixpkgs/NixOS GitHub](https://github.com/NixOS/)
 * Ask questions on [Stack Overflow, using the Yesod or Haskell tags](https://stackoverflow.com/questions/tagged/yesod+haskell)
 * Ask the [Yesod Google Group](https://groups.google.com/forum/#!forum/yesodweb)
 * There are several chatrooms you can ask for help:
