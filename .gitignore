@@ -20,3 +20,5 @@ cabal.sandbox.config
 *~
 \#*
 helloyesod.cabal
+result
+stack.yaml.lock
