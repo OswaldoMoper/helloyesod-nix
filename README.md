@@ -11,7 +11,7 @@ If you have trouble, refer to the [Nix Reference Manual](https://hydra.nixos.org
 
 Because this project uses nix, there's no need to install Stack on your system, you can run it in a shell.
 1. Make sure you have the yesod command line tool declared
-	* V nix-shell:
+	* Via nix-shell:
 
 	```
 	nix-shell -p haskellPackages.yesod-bin
