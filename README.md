@@ -67,3 +67,8 @@ stack test --flag helloyesod:library-only --flag helloyesod:dev
 * There are several chatrooms you can ask for help:
 	* For IRC, try Freenode#yesod and Freenode#haskell
 	* [Functional Programming Slack](https://fpchat-invite.herokuapp.com/), in the #haskell, #haskell-beginners, or #yesod channels.
+
+## Credits and Licenses
+
+This project includes code derived from [YesodWeb/Yesod](https://github.com/yesodweb/yesod), which is licensed under the [MIT License]([https://opensource.org/licenses/MIT](https://github.com/yesodweb/yesod/blob/master/LICENSE)).  
+Additional modifications and original code in this repository are licensed under the [BSD 3-Clause License](./LICENSE).
