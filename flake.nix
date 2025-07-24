@@ -33,6 +33,9 @@
                 stack
                 stylish-haskell
                 haskell-language-server
+                haskellPackages.yesod-bin
+                hlint
+                ghcid
               ];
               shell.additional = hsPkgs: with hsPkgs; [ Cabal ];
             };
